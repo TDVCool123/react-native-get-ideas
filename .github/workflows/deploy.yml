@@ -43,6 +43,9 @@ jobs:
           key: ${{ runner.os }}-gradle-caches-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}
           restore-keys: |
             ${{ runner.os }}-gradle-caches-
+            
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
       
       #------ Prepare fastlane scripts from here ---------------
       - name: Setup Ruby 
